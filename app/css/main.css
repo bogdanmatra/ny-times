@@ -1,0 +1,38 @@
+.ny-times-container {
+    padding: 10px;
+}
+
+.ny-times-link {
+    max-width: 100px;
+    border-radius: 5px;
+}
+.ny-times-table tbody tr {
+    cursor: pointer;
+}
+.ny-times-table.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+/* Loader inspired from: https://www.w3schools.com/howto/howto_css_loader.asp */
+.ny-times-loader {
+    margin: auto;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid black;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+.ny-times-loader-container {
+    padding: 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

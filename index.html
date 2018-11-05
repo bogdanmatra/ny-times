@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Information Is Power</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <link rel="shortcut icon" href="app/images/rolled-newspaper.png"/>
+    <!-- CDN Bootstrap CSS 3.3.7 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- NY Times CSS -->
+    <link rel="stylesheet" href="app/css/main.css">
+</head>
+
+<body>
+<div class="container ny-times-container" ng-app="ny-times" ng-controller="ArticlesController">
+    <!--TODO App Logo https://maketext.io/-->
+    <form>
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Choose a topic..." ng-model="topic">
+                <span class="input-group-btn">
+        <button class="btn btn-default" type="submit" ng-click="search()">Search</button>
+      </span>
+            </div>
+        </div>
+    </form>
+    <table class="table ny-times-table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Published</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat=" article in articles.docs | orderBy:'pub_date':'reverse' " ng-click="openModal(article)">
+            <td>
+                <img class="ny-times-link" ng-src="{{ selectImage(article.multimedia) }}" alt="Article image">
+            </td>
+            <td>{{ article.headline.main }}</td>
+            <td><strong>{{ article.pub_date | date:'dd MMM yyyy @ h:mma' }}</strong></td>
+        </tr>
+        </tbody>
+    </table>
+    <div ng-show="loading" class="ny-times-loader-container">
+        <div class="ny-times-loader"></div>
+    </div>
+</div>
+
+<!-- CDN Angular JS 1.5.11 -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
+
+<!-- CDN Angular Bootstrap 2.5.0 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+
+<!-- NY Times JavaScript -->
+<script src="app/js/app.js"></script>
+<script src="app/js/ArticlesController.js"></script>
+<script src="app/js/NYTimesService.js"></script>
+
+</body>
+</html>
