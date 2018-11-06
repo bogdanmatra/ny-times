@@ -42,7 +42,7 @@ app.controller('ArticlesController', function ($scope, NYTimesService, $uibModal
     // Select an image from the array.
     $scope.selectImage = function (images) {
         var image = images.find(function (image) {
-            return image.subType = "wide";
+            return image.subType == "wide";
         });
         images.favourite = image ? NYTimesService.getImageHost() + image.url : DEFAULT_ICON;
         return images.favourite;
