@@ -4,7 +4,7 @@
 }
 
 body {
-    background: url("../images/AdobeStock_Newspaper.png");
+    background: url("../images/Background.png");
     background-size: 250px;
 }
 
@@ -15,13 +15,13 @@ body {
 
 .ny-times-font {
     font-family: NYTimes;
-    font-size: 50px;
+    font-size: 80px;
 }
 
 .ny-times-container {
     padding: 10px;
     background: white;
-    margin: 10px auto;
+    margin: 40px auto;
     border-radius: 10px;
 }
 
@@ -63,6 +63,10 @@ body {
     color: grey;
 }
 
+.ny-times-title {
+    font-size: 15px;
+}
+
 .ny-times-table.ny-times-clickable tbody tr {
     cursor: pointer;
 }
@@ -71,8 +75,24 @@ body {
     vertical-align: middle;
 }
 
+.ny-times-table-modal tbody tr td {
+    border-top: 0;
+}
+
 .ny-times-table.table > tbody tr td:nth-child(2) {
     background: #d3d3d333;
+}
+
+/* Mobile */
+@media only screen and (max-width: 812px) {
+    .ny-times-font {
+        font-size: 50px;
+    }
+
+    .ny-times-container {
+        margin: 0 auto;
+        border-radius: 0;
+    }
 }
 
 /* Loader inspired from: https://www.w3schools.com/howto/howto_css_loader.asp */

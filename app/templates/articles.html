@@ -2,18 +2,18 @@
     <thead>
     <tr>
         <th></th>
-        <th>Title</th>
-        <th>Published</th>
+        <th class="text-center">Title</th>
+        <th class="text-center">Published</th>
     </tr>
     </thead>
     <tbody>
     <tr ng-repeat=" article in articles | orderBy:'pub_date':'reverse' " ng-click="openModal(article)">
-        <td>
+        <td class="text-center">
             <img class="ny-times-image" ng-src="{{ selectImage(article.multimedia) }}" alt="Article image">
         </td>
-        <td>{{ article.headline.main }}</td>
-        <td>
-            <strong class="pull-right">{{ article.pub_date | date:'dd MMM yyyy @ h:mma' }}</strong>
+        <td class="ny-times-title">{{ article.headline.main }}</td>
+        <td class="text-center">
+            <strong>{{ article.pub_date | date:'dd MMM yyyy @ h:mma' }}</strong>
         </td>
     </tr>
     </tbody>
@@ -22,5 +22,6 @@
     <div class="ny-times-loader"></div>
 </div>
 <div ng-show="!loading && articles.length == 0" class="text-center">
-    No articles. Please change the topic.
+    <h3>No articles. Please change the topic.</h3>
+    <h4>Not that much power here...</h4>
 </div>

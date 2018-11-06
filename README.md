@@ -6,6 +6,7 @@ A simple single page application which shows the latest 10 articles about a topi
 ### Feature List
 * User opens the link and the most recent 10 articles for `Amsterdam` appear.
 * The user can change the topic and hit `Enter` or click the `Search` button to show up the 10 results for his new topic.
+* If no topic is selected the search will show the most recent 10 articles.
 * A loader is shown when articles are loading.
 * Most recent articles are always shown first.
 * The user can click on an article and a summary is shown in a modal. Clicking the link icon opens the article on the New York Times website.

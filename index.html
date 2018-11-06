@@ -18,17 +18,7 @@
     <div class="ny-times-font text-center">
         Information Is Power
     </div>
-    <form>
-        <div class="form-group">
-            <div class="input-group">
-                <input type="text" class="form-control ny-times-input" placeholder="Choose a topic..." ng-model="topic"
-                       ng-click="selectAll($event)">
-                <span class="input-group-btn">
-        <button class="btn btn-default ny-times-search" type="submit" ng-click="search()">Search</button>
-      </span>
-            </div>
-        </div>
-    </form>
+    <div ng-include="'app/templates/form.html'"></div>
     <div ng-include="'app/templates/articles.html'"></div>
 </div>
 
