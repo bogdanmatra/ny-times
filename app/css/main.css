@@ -92,6 +92,7 @@ body {
     .ny-times-container {
         margin: 0 auto;
         border-radius: 0;
+        padding: 0 15px;
     }
 }
 
