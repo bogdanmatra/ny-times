@@ -1,0 +1,26 @@
+<table class="table ny-times-table ny-times-clickable">
+    <thead>
+    <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Published</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat=" article in articles | orderBy:'pub_date':'reverse' " ng-click="openModal(article)">
+        <td>
+            <img class="ny-times-image" ng-src="{{ selectImage(article.multimedia) }}" alt="Article image">
+        </td>
+        <td>{{ article.headline.main }}</td>
+        <td>
+            <strong class="pull-right">{{ article.pub_date | date:'dd MMM yyyy @ h:mma' }}</strong>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div ng-show="loading" class="ny-times-loader-container">
+    <div class="ny-times-loader"></div>
+</div>
+<div ng-show="!loading && articles.length == 0" class="text-center">
+    No articles. Please change the topic.
+</div>

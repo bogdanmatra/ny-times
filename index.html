@@ -15,38 +15,21 @@
 
 <body>
 <div class="container ny-times-container" ng-app="ny-times" ng-controller="ArticlesController">
-    <!--TODO App Logo https://maketext.io/-->
+    <div class="ny-times-font text-center">
+        Information Is Power
+    </div>
     <form>
         <div class="form-group">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Choose a topic..." ng-model="topic">
+                <input type="text" class="form-control ny-times-input" placeholder="Choose a topic..." ng-model="topic"
+                       ng-click="selectAll($event)">
                 <span class="input-group-btn">
-        <button class="btn btn-default" type="submit" ng-click="search()">Search</button>
+        <button class="btn btn-default ny-times-search" type="submit" ng-click="search()">Search</button>
       </span>
             </div>
         </div>
     </form>
-    <table class="table ny-times-table">
-        <thead>
-        <tr>
-            <th></th>
-            <th>Title</th>
-            <th>Published</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat=" article in articles.docs | orderBy:'pub_date':'reverse' " ng-click="openModal(article)">
-            <td>
-                <img class="ny-times-link" ng-src="{{ selectImage(article.multimedia) }}" alt="Article image">
-            </td>
-            <td>{{ article.headline.main }}</td>
-            <td><strong>{{ article.pub_date | date:'dd MMM yyyy @ h:mma' }}</strong></td>
-        </tr>
-        </tbody>
-    </table>
-    <div ng-show="loading" class="ny-times-loader-container">
-        <div class="ny-times-loader"></div>
-    </div>
+    <div ng-include="'app/templates/articles.html'"></div>
 </div>
 
 <!-- CDN Angular JS 1.5.11 -->

@@ -1,16 +1,78 @@
+@font-face {
+    font-family: NYTimes;
+    src: url('../fonts/Olde_English.ttf');
+}
+
+body {
+    background: url("../images/AdobeStock_Newspaper.png");
+    background-size: 250px;
+}
+
+.ny-times-input:focus {
+    border-color: black;
+    box-shadow: inset 0 0 black, 0 0 5px black;
+}
+
+.ny-times-font {
+    font-family: NYTimes;
+    font-size: 50px;
+}
+
 .ny-times-container {
     padding: 10px;
+    background: white;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.ny-times-search {
+    background: black;
+    color: white;
+}
+
+.ny-times-search:focus {
+    outline: 0;
+    border-color: black;
+    box-shadow: inset 0 0 black, 0 0 5px black;
+}
+
+.ny-times-search:active:focus {
+    outline: 0;
+}
+
+.ny-times-search:hover {
+    background: grey;
+    color: white;
+}
+
+.ny-times-image {
+    max-width: 90px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.ny-times-link span {
+    font-size: 40px;
 }
 
 .ny-times-link {
-    max-width: 100px;
-    border-radius: 5px;
+    color: black;
 }
-.ny-times-table tbody tr {
+
+.ny-times-link:hover {
+    color: grey;
+}
+
+.ny-times-table.ny-times-clickable tbody tr {
     cursor: pointer;
 }
+
 .ny-times-table.table > tbody > tr > td {
     vertical-align: middle;
+}
+
+.ny-times-table.table > tbody tr td:nth-child(2) {
+    background: #d3d3d333;
 }
 
 /* Loader inspired from: https://www.w3schools.com/howto/howto_css_loader.asp */

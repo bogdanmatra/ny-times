@@ -22,7 +22,7 @@ app.service('NYTimesService', function ($http) {
 
             }
         }).then(function (apiData) {
-            return apiData.data.response;
+            return apiData.data.response.docs;
         });
     };
 

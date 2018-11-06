@@ -8,6 +8,10 @@ app.controller('ArticlesController', function ($scope, NYTimesService, $uibModal
 
     $scope.topic = "Amsterdam";
 
+    $scope.selectAll = function($event) {
+        $event.target.select();
+    }
+
     $scope.search = function () {
         $scope.loading = true;
         $scope.articles = [];

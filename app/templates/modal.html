@@ -1,10 +1,17 @@
 <div class="ny-times-container">
-    <table class="table">
+    <table class="table ny-times-table">
         <tr>
-            <td><h4>{{summary}}</h4></td>
-            <td><a target="_blank" ng-href="{{url}}">
-                <img class="ny-times-link" ng-src="{{favouriteImage}}">
-            </a></td>
+            <td>
+                <img class="ny-times-image" ng-src="{{favouriteImage}}">
+            </td>
+            <td>
+                <h5>{{summary}}</h5>
+            </td>
+            <td>
+                <a class="ny-times-link" target="_blank" title="New York Times" ng-href="{{url}}">
+                    <span class="glyphicon glyphicon-link"></span>
+                </a>
+            </td>
         </tr>
     </table>
 </div>
