@@ -1,7 +1,7 @@
 'use-strict';
 
 /**
- * Geolocation Service exposes Google Maps services and browser location services.
+ * Connects to the New York Times API.
  */
 app.service('NYTimesService', function ($http) {
 
@@ -9,7 +9,7 @@ app.service('NYTimesService', function ($http) {
     var NY_TIMES_API_KEY = "b69c72c0b67f4968b817ccbd37d4632f";
 
     /**
-     * Gets the 10 article list.
+     * Gets the max 10 article list.
      */
     this.getArticles = function (topic) {
         return $http({
@@ -25,5 +25,9 @@ app.service('NYTimesService', function ($http) {
             return apiData.data.response.docs;
         });
     };
+
+    this.getImageHost = function () {
+        return 'http://www.nytimes.com/';
+    }
 
 });

@@ -6,23 +6,27 @@
  */
 app.controller('ArticlesController', function ($scope, NYTimesService, $uibModal) {
 
+    var DEFAULT_ICON = "app/images/newspaper.png";
     $scope.topic = "Amsterdam";
 
-    $scope.selectAll = function($event) {
+    // Selects all text when clicking on the input.
+    $scope.selectAll = function ($event) {
         $event.target.select();
     }
 
+    // Searches for articles.
     $scope.search = function () {
         $scope.loading = true;
         $scope.articles = [];
         NYTimesService.getArticles($scope.topic)
             .then(function (articles) {
                 $scope.articles = articles;
-                $scope.loading = false;
-            });
+            }).finally(function () {
+            $scope.loading = false;
+        });
     };
 
-
+    // Opens modal on row click.
     $scope.openModal = function (article) {
         $uibModal.open({
             templateUrl: 'app/templates/modal.html',
@@ -35,13 +39,15 @@ app.controller('ArticlesController', function ($scope, NYTimesService, $uibModal
         });
     }
 
+    // Select an image from the array.
     $scope.selectImage = function (images) {
         var image = images.find(function (image) {
             return image.subType = "wide";
         });
-        images.favourite = image ? 'http://www.nytimes.com/' + image.url : "app/images/newspaper.png";
+        images.favourite = image ? NYTimesService.getImageHost() + image.url : DEFAULT_ICON;
         return images.favourite;
     };
 
+    // First search.
     $scope.search();
 });

@@ -1,0 +1,17 @@
+{
+  "name": "ny-times",
+  "version": "1.0.0",
+  "description": "A simple single page application which shows the latest 10 articles about a topic.",
+  "repository": "https://github.com/bogdanmatra/ny-times",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine-core": "^3.3.0",
+    "karma": "^3.1.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.2"
+  },
+  "scripts": {
+    "test": "karma start --single-run"
+  }
+}
