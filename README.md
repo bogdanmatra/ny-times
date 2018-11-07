@@ -1,12 +1,12 @@
 # ny-times
 A simple single page application which shows the latest 10 articles about a topic.
 
-* Endpoint: https://developer.nytimes.com/article_search_v2.json
+* Endpoint playground: https://developer.nytimes.com/article_search_v2.json
 
 ### Feature List
-* User opens the link (hosted [here](https://bogdanmatra.github.io/ny-times)) and the most recent 10 articles for `Amsterdam` appear.
+* User opens the link (hosted [here](https://bogdanmatra.github.io/ny-times)) and the most recent 10 articles for `Amsterdam` will show up.
 * The user can change the topic and hit `Enter` or click the `Search` button to show up the 10 results for his new topic.
-* If no topic is selected the search will show the most recent 10 articles.
+* If no topic is selected the search will show the most recent 10 articles (related to anything).
 * A loader is shown when articles are loading.
 * Most recent articles are always shown first.
 * The user can click on an article and a summary is shown in a modal. Clicking the link icon opens the article on the New York Times website.
