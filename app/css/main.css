@@ -3,6 +3,10 @@
     src: url('../fonts/Olde_English.ttf');
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
     background: url("../images/Background.png");
     background-size: 250px;
