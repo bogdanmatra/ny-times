@@ -6,7 +6,7 @@
 app.service('NYTimesService', function ($http) {
 
     var NY_TIME_ENDPOINT = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-    var NY_TIMES_API_KEY = "b69c72c0b67f4968b817ccbd37d4632f";
+    var NY_TIMES_API_KEY = "UBBw3bVl28TCMIiJT6dOBjlK8dZNgZiX";
 
     /**
      * Gets the max 10 article list.
