@@ -14,8 +14,7 @@ app.service('NYTimesService', function ($http) {
     this.getArticles = function (topic) {
         return $http({
             url: NY_TIME_ENDPOINT,
-            method: "GET",
-            dataType: "jsonp",
+            method: "jsonp",
             params: {
                 q: topic,
                 sort: "newest",
